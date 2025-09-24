@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Timer Stop watch</title>
+    <style>
+        body {
+    display: flex; /* İçeriği ortalamak için Flexbox kullanır */
+    justify-content: center; /* Yatayda ortalar */
+    align-items: center; /* Dikeyde ortalar */
+    min-height: 100vh; /* Sayfanın tam yüksekliğini kaplar */
+    margin: 0; /* Tarayıcı boşluklarını kaldırır */
+    font-family: Arial, sans-serif;
+    background-color: #F3C3B2; /* Açık yeşilimsi arka plan rengi */
+}
+
+.container {
+    text-align: center; /* Tüm içeriği merkeze hizalar */
+    background-color: #FDE8D3; /* Açık turuncu arka plan rengi */
+    padding: 40px 60px;
+    border-radius: 15px; /* Köşeleri yuvarlar */
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2); /* Kutuya gölge verir */
+}
+
+h3 {
+    font-size: 1.5rem;
+    color: #657166; /* Koyu gri renk */
+    margin-bottom: 10px;
+}
+
+#time {
+    font-size: 6rem; /* Çok büyük bir font boyutu */
+    font-weight: bold;
+    color: #657166; /* Koyu gri renk */
+    margin: 20px 0;
+    letter-spacing: 5px; /* Harfler arasına boşluk ekler */
+}
+
+.buttons button {
+    font-size: 1rem;
+    padding: 12px 24px;
+    margin: 0 10px;
+    border: none;
+    border-radius: 50px; /* Butonları yuvarlak yapar */
+    cursor: pointer;
+    transition: all 0.3s ease; /* Yumuşak geçiş efektleri sağlar */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1); /* Butonlara gölge verir */
+}
+
+.buttons button:nth-child(1) {
+    background-color: #99CDD8; /* Başlat butonu rengi */
+    color: white;
+}
+
+.buttons button:nth-child(2) {
+    background-color: #DAEBE3; /* Durdur butonu rengi */
+    color: white;
+}
+
+.buttons button:nth-child(3) {
+    background-color: #CFD6C4; /* Sıfırla butonu rengi */
+    color: #657166;
+}
+
+.buttons button:hover {
+    transform: translateY(-3px); /* Butonun üzerine gelince hafifçe yukarı kaydırır */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2); /* Gölgeyi büyütür */
+}
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h3>KRONOMETRE</h3>
+        <h1 id="time">00:00</h1>
+        <div class="buttons">
+            <button onclick="startClock()">Başlat</button>
+            <button onclick="stopClock()">Durdur</button>
+            <button onclick="resetClock()">Sıfırla</button>
+        </div>
+    </div>
+    <script src="index.js"></script>
+</body>
+</html>
