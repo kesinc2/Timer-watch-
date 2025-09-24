@@ -56,7 +56,52 @@ The padStart() function ensures that single-digit numbers are formatted with a l
 
 CSS is used to center the user interface and add aesthetic touches like button shadows.
 
+--------------------------------- ------------------------------------------------- ------------------------------
+Kronometrenin Çalışma Algoritması
+Bu kronometre, temel olarak bir durum (state) yönetimi ve zamanlayıcı döngüsü üzerine kurulmuştur. İşte adım adım çalışma mantığı:
 
+1. Başlangıç Durumu
+Uygulama ilk yüklendiğinde, kronometre kapalı durumdadır.
+
+secondsElapsed değişkeni 0 olarak ayarlanır. Bu değişken, geçen toplam saniye sayısını tutar.
+
+Ekranda görünen süre 00:00 olarak ayarlanır.
+
+2. "Başlat" Butonuna Basıldığında
+Uygulama, kullanıcının "Başlat" düğmesine bastığını algılar.
+
+Öncelikle, kronometre zaten çalışıyorsa (yani interval adında bir zamanlayıcı varsa), mevcut sayacı durdurur. Bu, aynı anda birden fazla zamanlayıcının çalışmasını önler.
+
+Daha sonra, setInterval() adında bir JavaScript fonksiyonu çalıştırılır. Bu fonksiyon, timer() fonksiyonunu her 1000 milisaniyede (yani 1 saniyede) bir düzenli olarak çağırması için ayarlanır.
+
+Bu setInterval() çağrısı, interval değişkenine bir referans (bir kimlik numarası) döndürür. Bu referans, zamanlayıcıyı daha sonra durdurmak için kullanılır.
+
+3. Zamanlayıcı Döngüsü (Her Saniye)
+setInterval() fonksiyonu her 1 saniyede bir timer() fonksiyonunu çalıştırır.
+
+timer() fonksiyonu içinde:
+
+secondsElapsed değişkeni 1 artırılır.
+
+setTime() fonksiyonu çağrılır. Bu fonksiyon, artırılan secondsElapsed değerini dakika ve saniyeye dönüştürür ve bu yeni süreyi ekrana yazdırır. Bu süreç, kronometre durdurulana kadar her saniye tekrarlanır.
+
+4. "Durdur" Butonuna Basıldığında
+Kullanıcı "Durdur" düğmesine bastığında, stopClock() fonksiyonu çalışır.
+
+Bu fonksiyon, daha önce "Başlat" düğmesine basıldığında interval değişkenine kaydedilen referansı kullanarak clearInterval() fonksiyonunu çağırır.
+
+clearInterval() fonksiyonu, setInterval() döngüsünü durdurur ve timer() fonksiyonunun artık çalışmasını engeller.
+
+Kronometre, durdurulduğu andaki sürede ekranda kalır.
+
+5. "Sıfırla" Butonuna Basıldığında
+Kullanıcı "Sıfırla" düğmesine bastığında, resetClock() fonksiyonu çalışır.
+
+Bu fonksiyon ilk olarak stopClock() fonksiyonunu çağırarak kronometrenin durdurulmasını sağlar.
+
+Ardından, secondsElapsed değişkenini 0 olarak sıfırlar.
+
+Son olarak, setTime() fonksiyonunu çağırır. Bu, ekrandaki süreyi 00:00 olarak günceller.
 
 <img width="1920" height="867" alt="{19944EF1-F0EC-4EFC-8156-5667E8B219B9}" src="https://github.com/user-attachments/assets/7ddabfe4-992c-4db2-9fa3-79a621ea6d4c" />
 
