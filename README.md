@@ -58,5 +58,9 @@ CSS is used to center the user interface and add aesthetic touches like button s
 
 
 
+<img width="1920" height="867" alt="{19944EF1-F0EC-4EFC-8156-5667E8B219B9}" src="https://github.com/user-attachments/assets/7ddabfe4-992c-4db2-9fa3-79a621ea6d4c" />
+
+
+
 
 
